@@ -1,5 +1,6 @@
 ## Database structure
 
+
 ````
 **** Sample Project ****
 + user
@@ -31,4 +32,31 @@
 	
 
 ````
+### how to use
+
+```
+#clone the repo
+git clone https://github.com/sovanvathana0/Midterm-E-Commerce.git
+
+#change directory to project
+cd Midterm-E-Commerce
+
+#create a .env file in Midterm-E-Commerce/.env
+#copy all the details from .env.example
+#add your db password(mysql root pw)
+#also create db in mysql and add that db name to .env
+
+#run
+composer install
+php artisan key:generate
+
+#run this if you just created the db
+php artisan migrate --seed
+
+#else (this will reset the db to original)
+php artisan migrate:fresh --seed
+
+php artisan serve
+
+```
 # su8_sample_project
