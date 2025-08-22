@@ -59,4 +59,3 @@ php artisan migrate:fresh --seed
 php artisan serve
 
 ```
-# su8_sample_project
