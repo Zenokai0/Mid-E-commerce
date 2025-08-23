@@ -47,7 +47,7 @@ Home
     <h3>Search results for "{{ $query }}"</h3>
     <div class="row">
         @foreach($searchResults as $item)
-        <div class="col-md-3">
+        <a href="{{ route('detail', $item->id) }}" class="col-md-3" style="text-decoration: none;">
             <div class="product-card">
                 <span class="wishlist">
                     <svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
@@ -63,13 +63,9 @@ Home
                         <span class="price">US ${{ $item->price }}</span>
                         <span class="old-price">US ${{ $item->price + random_int(1,5) }}</span>
                     </div>
-                    <button
-                        class="btn btn-dark add-cart-btn" onclick='addToCart(@json($item))'>
-                        Add to Cart
-                    </button>
                 </div>
             </div>
-        </div>
+        </a>
         @endforeach
     </div>
 </div>
@@ -81,7 +77,7 @@ Home
     <h2>Sip in Style, Stay Dry</h2>
     <div class="row">
         @foreach($umbrellas as $item)
-        <div class="col-md-3">
+        <a href="{{ route('detail', $item->id) }}" class="col-md-3" style="text-decoration: none;">
             <div class="product-card">
                 <span class="wishlist">
                     <svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
@@ -92,19 +88,14 @@ Home
                     src="{{ $item->image }}"
                     alt="Refined Serpent Jacket">
                 <div class="card-body">
-                    <div class="product-title product-title-clipped">{{ $item->name }}</div>
+                    <div class="product-title product-title-clipped" style="color: black">{{ $item->name }}</div>
                     <div>
                         <span class="price">US ${{ $item->price }}</span>
                         <span class="old-price">US ${{ $item->price + random_int(1,5) }}</span>
                     </div>
-                    <button
-                        class="btn btn-dark add-cart-btn"
-                         onclick='addToCart(@json($item))'>
-                        Add to Cart
-                    </button>
                 </div>
             </div>
-        </div>
+        </a>
         @endforeach
     </div>
 </div>
@@ -115,7 +106,7 @@ Home
     <h2>Men's Picks, Extra Slash</h2>
     <div class="row">
         @foreach($mens as $item)
-        <div class="col-md-3">
+        <a href="{{ route('detail', $item->id) }}" class="col-md-3" style="text-decoration: none;">
             <div class="product-card">
                 <span class="wishlist">
                     <svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
@@ -126,19 +117,14 @@ Home
                     src="{{ $item->image }}"
                     alt="Refined Serpent Jacket">
                 <div class="card-body">
-                    <div class="product-title product-title-clipped">{{ $item->name }}</div>
+                    <div class="product-title product-title-clipped" style="color: black">{{ $item->name }}</div>
                     <div>
                         <span class="price">US ${{ $item->price }}</span>
                         <span class="old-price">US ${{ $item->price + random_int(1,5) }}</span>
                     </div>
-                    <button
-                        class="btn btn-dark add-cart-btn"
-                        onclick='addToCart(@json($item))'>
-                        Add to Cart
-                    </button>
                 </div>
             </div>
-        </div>
+        </a>
         @endforeach
     </div>
 </div>
@@ -149,7 +135,7 @@ Home
     <h2>Just for Her</h2>
     <div class="row">
         @foreach($skirts as $item)
-        <div class="col-md-3">
+        <a href="{{ route('detail', $item->id) }}" class="col-md-3" style="text-decoration: none;">
             <div class="product-card">
                 <span class="wishlist">
                     <svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
@@ -160,18 +146,14 @@ Home
                     src="{{ $item->image }}"
                     alt="Refined Serpent Jacket">
                 <div class="card-body">
-                    <div class="product-title product-title-clipped">{{ $item->name }}</div>
+                    <div class="product-title product-title-clipped" style="color: black">{{ $item->name }}</div>
                     <div>
                         <span class="price">US ${{ $item->price }}</span>
                         <span class="old-price">US ${{ $item->price + random_int(1,5) }}</span>
                     </div>
-                    <button
-                        class="btn btn-dark add-cart-btn" onclick='addToCart(@json($item))'>
-                        Add to Cart
-                    </button>
                 </div>
             </div>
-        </div>
+        </a>
         @endforeach
     </div>
     @endif

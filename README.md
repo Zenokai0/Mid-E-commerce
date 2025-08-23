@@ -2,7 +2,7 @@
 
 
 ````
-**** Sample Project ****
+**** Project ****
 + user
 + product
 	- id

@@ -306,7 +306,7 @@
     // Update cart badge
     cartCountEl.textContent = cart.length;
 
-    window.addToCart = function(item) {
+    window.addToCart = function(item, qty = 1) {
       if (!window.loggedIn) {
         showToast("Please login to add items to your cart.");
         const modalEl = document.getElementById('authModal');
@@ -318,27 +318,26 @@
         return;
       }
 
-      // Load cart
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const addQty = Number(qty) > 0 ? Number(qty) : 1;
 
-      // Check if item already exists in cart
       const index = cart.findIndex(i => i.id === item.id);
       if (index > -1) {
-        cart[index].qty += 1; // increase quantity
+        cart[index].qty = Number(cart[index].qty || 0) + addQty;
       } else {
         cart.push({
-          ...item,
-          qty: 1
-        }); // add new item
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          category: item.category,
+          image: item.image,
+          description: item.description,
+          qty: addQty
+        });
       }
 
-      // Save back
       localStorage.setItem("cart", JSON.stringify(cart));
-
-      // Update badge
-      const cartCountEl = document.getElementById("cart_count_label");
-      cartCountEl.textContent = cart.length;
-
+      document.getElementById("cart_count_label").textContent = cart.length;
       showToast("Added to cart");
     };
 
