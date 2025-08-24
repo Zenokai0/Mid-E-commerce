@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         // Get all Umbrella products
         $umbrellas = DB::table('product')
-            ->where('category', 'Umbrella')
+            ->whereIn('category', ['Umbrella', 'Tumbler'])
             ->limit(4)
             ->get();
 
@@ -24,7 +24,7 @@ class HomeController extends Controller
 
         // Get all Skirt products
         $skirts = DB::table('product')
-            ->where('category', 'Skirt')
+            ->whereIn('category', ['Skirt', 'Mini Zip-Skirt', 'One-Sided', 'Dress'])
             ->limit(4)
             ->get();
 
@@ -38,7 +38,7 @@ class HomeController extends Controller
     public function showMen()
     {
         $mens = DB::table('product')
-            ->where('category', ['T-Shirt', 'Jean'])
+            ->whereIn('category', ['T-Shirt', 'Jean'])
             ->get();
 
         return view('product.men', ['mens' => $mens]);
@@ -46,7 +46,7 @@ class HomeController extends Controller
     public function showWomen()
     {
         $womens = DB::table('product')
-            ->where('category', 'Skirt')
+            ->whereIn('category', ['Skirt', 'Mini Zip-Skirt', 'One-Sided', 'Dress'])
             ->get();
 
         return view('product.women', ['womens' => $womens]);

@@ -133,6 +133,16 @@ class ProductSeeder extends Seeder
                 'created_at' => '2025-08-18 22:26:24',
                 'updated_at' => '2025-08-18 22:26:27',
             ],
+            [
+                'id' => 13,
+                'name' => 'Floral Mini Dresses',
+                'price' => 17.59,
+                'category' => 'Dress',
+                'image' => 'https://zandokh.com/image/cache/catalog/products/2025-02/22224121142/IMG_0521-cr-450x672.jpg',
+                'description' => 'Regular floral mini dress featuring short sleeves with pleats front wrap tie detail.',
+                'created_at' => '2025-08-18 22:27:24',
+                'updated_at' => '2025-08-18 22:27:27',
+            ],
         ]);
     }
 }
