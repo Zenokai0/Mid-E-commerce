@@ -36,7 +36,7 @@
 
 ```
 #clone the repo
-git clone https://github.com/sovanvathana0/Midterm-E-Commerce.git
+git clone https://github.com/Zenokai0/Mid-E-commerce.git
 
 #change directory to project
 cd Midterm-E-Commerce
